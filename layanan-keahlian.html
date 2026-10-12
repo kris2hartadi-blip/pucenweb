@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="id" class="h-full">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Layanan & Keahlian - Pujiono Centre</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+    body { font-family: 'Plus Jakarta Sans', sans-serif; }
+  </style>
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased flex flex-col min-h-screen">
+
+  <!-- 1. HEADER (TERHUBUNG DENGAN INDEX.HTML & TENTANG-KAMI.HTML) -->
+  <header class="bg-white border-b border-slate-200/80 shrink-0 sticky top-0 z-50 shadow-xs">
+    <div class="max-w-7xl mx-auto px-5 h-14 flex items-center justify-between">
+      
+      <!-- Brand Logo -->
+      <a href="index.html" class="flex items-center space-x-2 py-1">
+        <img src="CP-YPC2.png" 
+             alt="Pujiono Centre Logo" 
+             class="h-9 w-auto object-contain transition-transform duration-200 hover:scale-105">
+      </a>
+
+      <!-- Nav Links (Desktop) -->
+      <nav class="hidden lg:flex items-center space-x-6 text-[11px] font-semibold text-slate-700">
+        <a href="tentang-kami.html" class="hover:text-teal-700 transition">Tentang Kami</a>
+        <a href="layanan-keahlian.html" class="text-teal-700 font-bold border-b-2 border-teal-700 py-4">Layanan & Keahlian</a>
+        <a href="index.html#proyek" class="hover:text-teal-700 transition">Proyek & Portfolio</a>
+        <a href="index.html#repository" class="hover:text-teal-700 transition">Repositori Publikasi</a>
+        <a href="index.html#berita" class="hover:text-teal-700 transition">Berita</a>
+      </nav>
+
+      <!-- Nav Actions -->
+      <div class="flex items-center space-x-3">
+        <a href="#contact" class="hidden sm:inline-block bg-teal-700 hover:bg-teal-800 text-white text-[11px] font-bold px-3.5 py-1.5 rounded-full shadow-sm transition">
+          Hubungi Kami
+        </a>
+        <div class="text-[10px] text-slate-400 font-medium">
+          <span class="text-teal-700 font-bold cursor-pointer">ID</span> | <span class="hover:text-slate-800 cursor-pointer">EN</span>
+        </div>
+        <button id="mobile-menu-btn" class="lg:hidden text-slate-700 p-1.5 focus:outline-none" aria-label="Buka Menu Navigasi">
+          <i class="fa-solid fa-bars text-lg"></i>
+        </button>
+      </div>
+
+    </div>
+
+    <!-- Mobile Nav Menu Dropdown -->
+    <div id="mobile-menu" class="hidden lg:hidden border-t border-slate-200 bg-white px-5 py-3 space-y-2 text-xs font-semibold text-slate-700">
+      <a href="tentang-kami.html" class="block py-1 hover:text-teal-700">Tentang Kami</a>
+      <a href="layanan-keahlian.html" class="block py-1 text-teal-700 font-bold">Layanan & Keahlian</a>
+      <a href="index.html#proyek" class="block py-1 hover:text-teal-700">Proyek & Portfolio</a>
+      <a href="index.html#repository" class="block py-1 hover:text-teal-700">Repositori Publikasi</a>
+      <a href="index.html#berita" class="block py-1 hover:text-teal-700">Berita</a>
+      <a href="#contact" class="block py-1.5 text-center bg-teal-700 text-white rounded-full font-bold mt-2">Hubungi Kami</a>
+    </div>
+  </header>
+
+  <!-- 2. PAGE HEADER BANNER -->
+  <section class="bg-slate-900 text-white py-10 px-5 relative overflow-hidden">
+    <div class="absolute inset-0 opacity-20">
+      <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1600&q=80" alt="Background pattern" class="w-full h-full object-cover">
+    </div>
+    <div class="max-w-7xl mx-auto relative z-10 space-y-2">
+      <div class="text-[10px] font-bold text-teal-400 uppercase tracking-widest flex items-center gap-2">
+        <a href="index.html" class="hover:underline">Beranda</a>
+        <i class="fa-solid fa-chevron-right text-[8px] text-slate-500"></i>
+        <span>Layanan & Keahlian</span>
+      </div>
+      <h1 class="text-2xl sm:text-3xl font-extrabold tracking-tight">Kepakaran & Bidang Layanan Utama</h1>
+      <p class="text-xs sm:text-sm text-slate-300 max-w-2xl leading-relaxed">
+        Solusi terpadu berbasis bukti riset strategis, analisis kebijakan publik, dan penguatan kapasitas lokal untuk ketahanan bencana serta iklim.
+      </p>
+    </div>
+  </section>
+
+  <!-- 3. NAVIGASI CEPAT KATEGORI (QUICK ANCHOR MENU) -->
+  <section class="bg-white border-b border-slate-200 py-3 px-5 sticky top-14 z-40 shadow-xs">
+    <div class="max-w-7xl mx-auto flex items-center space-x-3 overflow-x-auto text-xs font-semibold scrollbar-none">
+      <span class="text-slate-400 shrink-0 text-[11px]">Pilih Bidang:</span>
+      <a href="#drm" class="bg-slate-100 hover:bg-teal-50 hover:text-teal-700 text-slate-700 px-3 py-1.5 rounded-full border border-slate-200 transition shrink-0">Disaster Risk Management</a>
+      <a href="#iklim" class="bg-slate-100 hover:bg-teal-50 hover:text-teal-700 text-slate-700 px-3 py-1.5 rounded-full border border-slate-200 transition shrink-0">Climate Change Adaptation</a>
+      <a href="#riset" class="bg-slate-100 hover:bg-teal-50 hover:text-teal-700 text-slate-700 px-3 py-1.5 rounded-full border border-slate-200 transition shrink-0">Kebijakan & Riset Evaluatif</a>
+      <a href="#lhl" class="bg-slate-100 hover:bg-teal-50 hover:text-teal-700 text-slate-700 px-3 py-1.5 rounded-full border border-slate-200 transition shrink-0">LHL & Kapasitas Lokal</a>
+    </div>
+  </section>
+
+  <!-- 4. RINCIAN LAYANAN KEAHLIAN (DETAIL TOPIC SECTIONS) -->
+  <section class="py-10 max-w-7xl mx-auto px-5 w-full space-y-16">
+
+    <!-- PILAR 1: DRM -->
+    <div id="drm" class="scroll-mt-32 grid grid-cols-1 lg:grid-cols-12 gap-8 items-start bg-white border border-slate-200 rounded-xl p-6 sm:p-8 shadow-xs">
+      <div class="lg:col-span-5 space-y-4">
+        <span class="bg-slate-900 text-white text-[10px] font-bold px-2.5 py-1 rounded">DRM</span>
+        <h2 class="text-xl font-bold text-slate-900">Disaster Risk Management</h2>
+        <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+          Pengurangan risiko bencana berbasis bukti melalui pemetaan kerentanan terpadu, penyusunan strategi kontingensi, dan perencanaan kesiapsiagaan inklusif di tingkat lokal maupun nasional.
+        </p>
+        <div class="rounded-lg overflow-hidden border border-slate-200">
+          <img src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&w=600&q=80" alt="DRM" class="w-full h-48 object-cover">
+        </div>
+      </div>
+
+      <div class="lg:col-span-7 space-y-6">
+        <div>
+          <h3 class="text-xs font-bold uppercase tracking-wider text-teal-700 mb-3">Cakupan Layanan Spesifik</h3>
+          <ul class="space-y-2.5 text-xs sm:text-sm text-slate-700">
+            <li class="flex items-start gap-2.5">
+              <i class="fa-solid fa-circle-check text-teal-600 mt-0.5 text-xs"></i>
+              <span><strong>Asesmen Riset & Pemetaan Kerentanan Komunitas:</strong> Evaluasi tingkat risiko ancaman bencana alam dan non-alam secara partisipatif.</span>
+            </li>
+            <li class="flex items-start gap-2.5">
+              <i class="fa-solid fa-circle-check text-teal-600 mt-0.5 text-xs"></i>
+              <span><strong>Penyusunan Dokumen Rencana Kontingensi:</strong> Pendampingan teknis pembuatan Standard Operating Procedure (SOP) kesiapsiagaan daerah.</span>
+            </li>
+            <li class="flex items-start gap-2.5">
+              <i class="fa-solid fa-circle-check text-teal-600 mt-0.5 text-xs"></i>
+              <span><strong>Penguatan Kelembagaan Desa Tangguh Bencana:</strong> Pembinaan kapasitas relawan dan komunitas basis desa/kelurahan.</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="bg-slate-50 border border-slate-200 rounded-lg p-4">
+          <span class="text-[10px] font-bold text-slate-400 uppercase tracking-wider block mb-1">Contoh Output & Proyek Terkait</span>
+          <h4 class="font-bold text-xs text-slate-800">Penyusunan Peta Risiko & Rencana Kesiapsiagaan Komunitas Pesisir</h4>
+          <p class="text-xs text-slate-500 mt-1">Selesai dieksekusi bersama konsorsium lembaga kemanusiaan lokal.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- PILAR 2: CLIMATE CHANGE ADAPTATION -->
+    <div id="iklim" class="scroll-mt-32 grid grid-cols-1 lg:grid-cols-12 gap-8 items-start bg-white border border-slate-200 rounded-xl p-6 sm:p-8 shadow-xs">
+      <div class="lg:col-span-5 space-y-4">
+        <span class="bg-teal-800 text-white text-[10px] font-bold px-2.5 py-1 rounded">IKLIM</span>
+        <h2 class="text-xl font-bold text-slate-900">Climate Change Adaptation</h2>
+        <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+          Penyelarasan strategi ketahanan iklim, penilaian dampak lingkungan jangka panjang, serta pengintegrasian aksi adaptasi ke dalam perencanaan dan anggaran pembangunan daerah.
+        </p>
+        <div class="rounded-lg overflow-hidden border border-slate-200">
+          <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=600&q=80" alt="Adaptasi Iklim" class="w-full h-48 object-cover">
+        </div>
+      </div>
+
+      <div class="lg:col-span-7 space-y-6">
+        <div>
+          <h3 class="text-xs font-bold uppercase tracking-wider text-teal-700 mb-3">Cakupan Layanan Spesifik</h3>
+          <ul class="space-y-2.5 text-xs sm:text-sm text-slate-700">
+            <li class="flex items-start gap-2.5">
+              <i class="fa-solid fa-circle-check text-teal-600 mt-0.5 text-xs"></i>
+              <span><strong>Kajian Kerentanan & Kapasitas Iklim (VA):</strong> Penelitian mendalam dampak perubahan iklim terhadap mata pencaharian pesisir dan agraris.</span>
+            </li>
+            <li class="flex items-start gap-2.5">
+              <i class="fa-solid fa-circle-check text-teal-600 mt-0.5 text-xs"></i>
+              <span><strong>Integrasi Rencana Adaptasi ke APBD:</strong> Advokasi penganggaran pembangunan daerah ramah ketahanan iklim.</span>
+            </li>
+            <li class="flex items-start gap-2.5">
+              <i class="fa-solid fa-circle-check text-teal-600 mt-0.5 text-xs"></i>
+              <span><strong>Pelatihan Edukasi Iklim Komunitas:</strong> Lokakarya kesadaran perubahan iklim untuk masyarakat akar rumput.</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="bg-slate-50 border border-slate-200 rounded-lg p-4">
+          <span class="text-[10px] font-bold text-slate-400 uppercase tracking-wider block mb-1">Contoh Output & Proyek Terkait</span>
+          <h4 class="font-bold text-xs text-slate-800">Policy Brief #24: Integrasi Adaptasi Perubahan Iklim ke dalam APBD Daerah</h4>
+          <p class="text-xs text-slate-500 mt-1">Dokumen panduan strategis untuk pemerintah daerah.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- PILAR 3: KEBIJAKAN & RISET EVALUATIF -->
+    <div id="riset" class="scroll-mt-32 grid grid-cols-1 lg:grid-cols-12 gap-8 items-start bg-white border border-slate-200 rounded-xl p-6 sm:p-8 shadow-xs">
+      <div class="lg:col-span-5 space-y-4">
+        <span class="bg-indigo-900 text-white text-[10px] font-bold px-2.5 py-1 rounded">RISET</span>
+        <h2 class="text-xl font-bold text-slate-900">Kebijakan & Riset Evaluatif</h2>
+        <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+          Analisis regulasi publik, penyusunan Policy Brief ilmiah strategis, serta pelaksanaan evaluasi independen (Monitoring & Evaluation) program kemanusiaan yang terukur.
+        </p>
+        <div class="rounded-lg overflow-hidden border border-slate-200">
+          <img src="https://images.unsplash.com/photo-1450133064473-71024230f91b?auto=format&fit=crop&w=600&q=80" alt="Riset & Kebijakan" class="w-full h-48 object-cover">
+        </div>
+      </div>
+
+      <div class="lg:col-span-7 space-y-6">
+        <div>
+          <h3 class="text-xs font-bold uppercase tracking-wider text-teal-700 mb-3">Cakupan Layanan Spesifik</h3>
+          <ul class="space-y-2.5 text-xs sm:text-sm text-slate-700">
+            <li class="flex items-start gap-2.5">
+              <i class="fa-solid fa-circle-check text-teal-600 mt-0.5 text-xs"></i>
+              <span><strong>Evaluasi Program Kemanusiaan Independen:</strong> Kajian dampak kualitatif dan kuantitatif bagi donor & INGO.</span>
+            </li>
+            <li class="flex items-start gap-2.5">
+              <i class="fa-solid fa-circle-check text-teal-600 mt-0.5 text-xs"></i>
+              <span><strong>Penyusunan Policy Brief Strategis:</strong> Sintesis bukti riset menjadi rekomendasi kebijakan praktis bagi pembuat keputusan.</span>
+            </li>
+            <li class="flex items-start gap-2.5">
+              <i class="fa-solid fa-circle-check text-teal-600 mt-0.5 text-xs"></i>
+              <span><strong>Kajian Harmonisasi Regulasi Kebencanaan:</strong> Analisis keselarasan UU/Perda dengan praktik lapangan.</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="bg-slate-50 border border-slate-200 rounded-lg p-4">
+          <span class="text-[10px] font-bold text-slate-400 uppercase tracking-wider block mb-1">Contoh Output & Proyek Terkait</span>
+          <h4 class="font-bold text-xs text-slate-800">Evaluasi Dampak Partisipasi Komunitas dalam Manajemen Bencana</h4>
+          <p class="text-xs text-slate-500 mt-1">Riset independen kolaboratif tingkat nasional.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- PILAR 4: LHL & KAPASITAS LOKAL -->
+    <div id="lhl" class="scroll-mt-32 grid grid-cols-1 lg:grid-cols-12 gap-8 items-start bg-white border border-slate-200 rounded-xl p-6 sm:p-8 shadow-xs">
+      <div class="lg:col-span-5 space-y-4">
+        <span class="bg-indigo-900 text-white text-[10px] font-bold px-2.5 py-1 rounded">LHL</span>
+        <h2 class="text-xl font-bold text-slate-900">Local Humanitarian Leadership (LHL)</h2>
+        <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+          Penguatan peran, kepemimpinan, dan akuntabilitas aktor lokal dalam arsitektur kemanusiaan global guna menciptakan tata kelola penanggulangan bencana yang adil dan seimbang.
+        </p>
+        <div class="rounded-lg overflow-hidden border border-slate-200">
+          <img src="https://images.unsplash.com/photo-1531206715517-5c0ba140b2b8?auto=format&fit=crop&w=600&q=80" alt="LHL" class="w-full h-48 object-cover">
+        </div>
+      </div>
+
+      <div class="lg:col-span-7 space-y-6">
+        <div>
+          <h3 class="text-xs font-bold uppercase tracking-wider text-teal-700 mb-3">Cakupan Layanan Spesifik</h3>
+          <ul class="space-y-2.5 text-xs sm:text-sm text-slate-700">
+            <li class="flex items-start gap-2.5">
+              <i class="fa-solid fa-circle-check text-teal-600 mt-0.5 text-xs"></i>
+              <span><strong>Konsolidasi Jejaring Ormas/LSM Lokal:</strong> Fasilitasi platform koalisi kepemimpinan lokal (LHL Network).</span>
+            </li>
+            <li class="flex items-start gap-2.5">
+              <i class="fa-solid fa-circle-check text-teal-600 mt-0.5 text-xs"></i>
+              <span><strong>Advokasi Lokalisasi Kemanusiaan:</strong> Mendorong kemitraan langsung antara aktor lokal dan penyedia pendanaan internasional.</span>
+            </li>
+            <li class="flex items-start gap-2.5">
+              <i class="fa-solid fa-circle-check text-teal-600 mt-0.5 text-xs"></i>
+              <span><strong>Mentoring & Pembinaan Manajemen Organisasi:</strong> Peningkatan akuntabilitas operasional lembaga lokal.</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="bg-slate-50 border border-slate-200 rounded-lg p-4">
+          <span class="text-[10px] font-bold text-slate-400 uppercase tracking-wider block mb-1">Contoh Output & Proyek Terkait</span>
+          <h4 class="font-bold text-xs text-slate-800">Program Penguatan Jejaring Kepemimpinan Kemanusiaan Lokal</h4>
+          <p class="text-xs text-slate-500 mt-1">Inisiatif jejaring nasional berkelanjutan 2024–2026.</p>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- 5. METODOLOGI KERJA LEMBAGA -->
+  <section class="bg-slate-100 py-10 px-5 border-t border-slate-200">
+    <div class="max-w-7xl mx-auto space-y-6">
+      <div class="text-center max-w-xl mx-auto">
+        <span class="text-[10px] font-bold text-teal-700 uppercase tracking-widest">ALUR KERJA BERSAMA</span>
+        <h2 class="text-lg sm:text-xl font-bold text-slate-900 mt-1">Pendekatan Kerja Sama & Eksekusi</h2>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
+        <div class="bg-white p-4 rounded-lg border border-slate-200 shadow-xs space-y-1.5">
+          <span class="w-6 h-6 bg-teal-700 text-white font-bold rounded-full flex items-center justify-center text-xs">1</span>
+          <h3 class="font-bold text-xs text-slate-900">Asesmen Kebutuhan</h3>
+          <p class="text-[11px] text-slate-500 leading-relaxed">Identifikasi awal isu, konteks lokal, dan tujuan strategis mitra.</p>
+        </div>
+
+        <div class="bg-white p-4 rounded-lg border border-slate-200 shadow-xs space-y-1.5">
+          <span class="w-6 h-6 bg-teal-700 text-white font-bold rounded-full flex items-center justify-center text-xs">2</span>
+          <h3 class="font-bold text-xs text-slate-900">Desain Metodologi</h3>
+          <p class="text-[11px] text-slate-500 leading-relaxed">Penyusunan instrumen riset dan rencana kerja partisipatif.</p>
+        </div>
+
+        <div class="bg-white p-4 rounded-lg border border-slate-200 shadow-xs space-y-1.5">
+          <span class="w-6 h-6 bg-teal-700 text-white font-bold rounded-full flex items-center justify-center text-xs">3</span>
+          <h3 class="font-bold text-xs text-slate-900">Eksekusi Lapangan</h3>
+          <p class="text-[11px] text-slate-500 leading-relaxed">Pengumpulan data, analisis ilmiah, dan pendampingan komunitas.</p>
+        </div>
+
+        <div class="bg-white p-4 rounded-lg border border-slate-200 shadow-xs space-y-1.5">
+          <span class="w-6 h-6 bg-teal-700 text-white font-bold rounded-full flex items-center justify-center text-xs">4</span>
+          <h3 class="font-bold text-xs text-slate-900">Advokasi & Diseminasi</h3>
+          <p class="text-[11px] text-slate-500 leading-relaxed">Penyusunan Policy Brief, pelaporan, dan penyebarluasan hasil.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. FOOTER -->
+  <footer id="contact" class="bg-slate-900 border-t border-slate-800 text-white py-6 px-5 mt-auto relative z-10">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-5 text-[11px]">
+      
+      <div class="space-y-1.5">
+        <span class="text-xs font-extrabold tracking-tight text-white block">PUJIONO CENTRE</span>
+        <p class="text-slate-400 leading-relaxed text-[10px]">
+          Pusat keunggulan kajian dan advokasi pengurangan risiko bencana, adaptasi iklim, serta kepemimpinan lokal.
+        </p>
+      </div>
+
+      <div>
+        <h4 class="font-bold uppercase tracking-wider text-teal-400 mb-2 text-[10px]">Navigasi</h4>
+        <ul class="space-y-1 text-slate-300">
+          <li><a href="tentang-kami.html" class="hover:text-white transition">Tentang Kami</a></li>
+          <li><a href="layanan-keahlian.html" class="hover:text-white transition">Layanan & Keahlian</a></li>
+          <li><a href="index.html#proyek" class="hover:text-white transition">Portfolio Proyek</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="font-bold uppercase tracking-wider text-teal-400 mb-2 text-[10px]">Fokus Tematik</h4>
+        <ul class="space-y-1 text-slate-300">
+          <li><a href="#drm" class="hover:text-white transition">Disaster Risk Management</a></li>
+          <li><a href="#iklim" class="hover:text-white transition">Climate Change Adaptation</a></li>
+          <li><a href="#lhl" class="hover:text-white transition">Local Humanitarian Leadership</a></li>
+        </ul>
+      </div>
+
+      <div class="space-y-1.5">
+        <h4 class="font-bold uppercase tracking-wider text-teal-400 text-[10px]">Sekretariat</h4>
+        <p class="text-slate-300">Yogyakarta, Indonesia</p>
+        <p class="text-slate-300">Email: info@pujionocentre.org</p>
+        <div class="flex space-x-3 pt-1 text-slate-400">
+          <a href="#" class="hover:text-teal-400 transition" aria-label="LinkedIn Pujiono Centre"><i class="fa-brands fa-linkedin text-sm"></i></a>
+          <a href="#" class="hover:text-teal-400 transition" aria-label="Twitter Pujiono Centre"><i class="fa-brands fa-twitter text-sm"></i></a>
+          <a href="#" class="hover:text-teal-400 transition" aria-label="YouTube Pujiono Centre"><i class="fa-brands fa-youtube text-sm"></i></a>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="max-w-7xl mx-auto border-t border-slate-800/80 mt-5 pt-3 flex flex-col sm:flex-row items-center justify-between text-[9px] text-slate-500 gap-2">
+      <p>&copy; 2026 Pujiono Centre. All rights reserved.</p>
+      <p>Membangun Ketangguhan Berbasis Bukti & Kemitraan</p>
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const mobileBtn = document.getElementById('mobile-menu-btn');
+      const mobileMenu = document.getElementById('mobile-menu');
+
+      if (mobileBtn && mobileMenu) {
+        mobileBtn.addEventListener('click', () => {
+          mobileMenu.classList.toggle('hidden');
+        });
+      }
+    });
+  </script>
+
+</body>
+</html>

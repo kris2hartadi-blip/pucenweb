@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="id" class="h-full">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tentang Kami - Pujiono Centre</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+    body { font-family: 'Plus Jakarta Sans', sans-serif; }
+  </style>
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased flex flex-col min-h-screen">
+
+  <!-- 1. HEADER (NAVIGASI TERHUBUNG SINKRON DENGAN INDEX.HTML & LAYANAN-KEAHLIAN.HTML) -->
+  <header class="bg-white border-b border-slate-200/80 shrink-0 sticky top-0 z-50 shadow-xs">
+    <div class="max-w-7xl mx-auto px-5 h-14 flex items-center justify-between">
+      
+      <!-- Brand Logo -->
+      <a href="index.html" class="flex items-center space-x-2 py-1">
+        <img src="CP-YPC2.png" 
+             alt="Pujiono Centre Logo" 
+             class="h-9 w-auto object-contain transition-transform duration-200 hover:scale-105">
+      </a>
+
+      <!-- Nav Links (Desktop) -->
+      <nav class="hidden lg:flex items-center space-x-6 text-[11px] font-semibold text-slate-700">
+        <a href="tentang-kami.html" class="text-teal-700 font-bold border-b-2 border-teal-700 py-4">Tentang Kami</a>
+        <!-- LINK DIPERBARUI KE LAYANAN-KEAHLIAN.HTML -->
+        <a href="layanan-keahlian.html" class="hover:text-teal-700 transition">Layanan & Keahlian</a>
+        <a href="index.html#proyek" class="hover:text-teal-700 transition">Proyek & Portfolio</a>
+        <a href="index.html#repository" class="hover:text-teal-700 transition">Repositori Publikasi</a>
+        <a href="index.html#berita" class="hover:text-teal-700 transition">Berita</a>
+      </nav>
+
+      <!-- Nav Actions -->
+      <div class="flex items-center space-x-3">
+        <a href="#contact" class="hidden sm:inline-block bg-teal-700 hover:bg-teal-800 text-white text-[11px] font-bold px-3.5 py-1.5 rounded-full shadow-sm transition">
+          Hubungi Kami
+        </a>
+        <div class="text-[10px] text-slate-400 font-medium">
+          <span class="text-teal-700 font-bold cursor-pointer">ID</span> | <span class="hover:text-slate-800 cursor-pointer">EN</span>
+        </div>
+        <!-- Tombol Mobile Menu Hamburger -->
+        <button id="mobile-menu-btn" class="lg:hidden text-slate-700 p-1.5 focus:outline-none" aria-label="Buka Menu Navigasi">
+          <i class="fa-solid fa-bars text-lg"></i>
+        </button>
+      </div>
+
+    </div>
+
+    <!-- Mobile Nav Menu Dropdown -->
+    <div id="mobile-menu" class="hidden lg:hidden border-t border-slate-200 bg-white px-5 py-3 space-y-2 text-xs font-semibold text-slate-700">
+      <a href="tentang-kami.html" class="block py-1 text-teal-700 font-bold">Tentang Kami</a>
+      <!-- LINK DIPERBARUI KE LAYANAN-KEAHLIAN.HTML -->
+      <a href="layanan-keahlian.html" class="block py-1 hover:text-teal-700">Layanan & Keahlian</a>
+      <a href="index.html#proyek" class="block py-1 hover:text-teal-700">Proyek & Portfolio</a>
+      <a href="index.html#repository" class="block py-1 hover:text-teal-700">Repositori Publikasi</a>
+      <a href="index.html#berita" class="block py-1 hover:text-teal-700">Berita</a>
+      <a href="#contact" class="block py-1.5 text-center bg-teal-700 text-white rounded-full font-bold mt-2">Hubungi Kami</a>
+    </div>
+  </header>
+
+  <!-- 2. PAGE HEADER BANNER -->
+  <section class="bg-slate-900 text-white py-10 px-5 relative overflow-hidden">
+    <div class="absolute inset-0 opacity-20">
+      <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1600&q=80" alt="Background pattern" class="w-full h-full object-cover">
+    </div>
+    <div class="max-w-7xl mx-auto relative z-10 space-y-2">
+      <div class="text-[10px] font-bold text-teal-400 uppercase tracking-widest flex items-center gap-2">
+        <a href="index.html" class="hover:underline">Beranda</a>
+        <i class="fa-solid fa-chevron-right text-[8px] text-slate-500"></i>
+        <span>Tentang Kami</span>
+      </div>
+      <h1 class="text-2xl sm:text-3xl font-extrabold tracking-tight">Profil Lembaga</h1>
+      <p class="text-xs sm:text-sm text-slate-300 max-w-2xl leading-relaxed">
+        Pusat keunggulan kajian, pengembangan kapasitas, dan advokasi kebijakan pengurangan risiko bencana, adaptasi iklim, serta kepemimpinan kemanusiaan lokal.
+      </p>
+    </div>
+  </section>
+
+  <!-- 3. PROFIL UTAMA & SEJARAH SINGKAT -->
+  <section class="py-10 max-w-7xl mx-auto px-5 w-full space-y-10">
+    
+    <!-- Profil & Latar Belakang -->
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+      <div class="lg:col-span-7 space-y-4">
+        <span class="text-[11px] font-extrabold text-teal-800 tracking-wider uppercase bg-teal-50 px-2.5 py-1 rounded border border-teal-200 inline-block">
+          SEJARAH & REKAM JEJAK
+        </span>
+        <h2 class="text-xl sm:text-2xl font-bold text-slate-900 leading-snug">
+          Menghubungkan Bukti Riset Lapangan dengan Advokasi Kebijakan
+        </h2>
+        <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+          Pujiono Centre didirikan sebagai lembaga kajian independen yang berfokus pada analisis mendalam mengenai manajemen risiko bencana, adaptasi perubahan iklim, dan tata kelola kemanusiaan. Kami berdedikasi memperkuat aktor lokal agar mampu memimpin dan mengelola kesiapsiagaan bencana secara mandiri dan berkelanjutan.
+        </p>
+        <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+          Selama lebih dari 15 tahun, Pujiono Centre aktif menjembatani komunitas lokal, pemerintah daerah, kementerian nasional, hingga konsorsium internasional dalam menyusun kebijakan berbasis bukti (<em>evidence-based policy</em>).
+        </p>
+      </div>
+
+      <div class="lg:col-span-5 relative">
+        <div class="relative rounded-xl overflow-hidden shadow-md border border-slate-200">
+          <img src="https://images.unsplash.com/photo-1531206715517-5c0ba140b2b8?auto=format&fit=crop&w=800&q=80" alt="Diskusi Tim Pujiono Centre" class="w-full h-64 sm:h-80 object-cover">
+        </div>
+      </div>
+    </div>
+
+    <!-- 4. VISI & MISI -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      
+      <!-- Visi -->
+      <div class="bg-white border border-slate-200 rounded-xl p-6 shadow-xs hover:border-teal-500 transition space-y-3">
+        <div class="w-10 h-10 bg-teal-100 text-teal-800 rounded-lg flex items-center justify-center font-bold text-lg">
+          <i class="fa-solid fa-eye"></i>
+        </div>
+        <h3 class="text-lg font-bold text-slate-900">Visi Kami</h3>
+        <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+          Terwujudnya masyarakat dan aktor lokal yang tangguh, mandiri, serta memegang peran kunci dalam tata kelola pengurangan risiko bencana dan ketahanan iklim yang berkeadilan.
+        </p>
+      </div>
+
+      <!-- Misi -->
+      <div class="bg-white border border-slate-200 rounded-xl p-6 shadow-xs hover:border-teal-500 transition space-y-3">
+        <div class="w-10 h-10 bg-teal-100 text-teal-800 rounded-lg flex items-center justify-center font-bold text-lg">
+          <i class="fa-solid fa-bullseye"></i>
+        </div>
+        <h3 class="text-lg font-bold text-slate-900">Misi Kami</h3>
+        <ul class="text-xs sm:text-sm text-slate-600 space-y-2 list-disc pl-4 leading-relaxed">
+          <li>Menyelenggarakan riset dan evaluasi independen berstandar tinggi.</li>
+          <li>Mendorong advokasi kebijakan publik yang berpihak pada komunitas rentan.</li>
+          <li>Memfasilitasi jejaring Kepemimpinan Kemanusiaan Lokal (<em>Local Humanitarian Leadership</em>).</li>
+          <li>Mengembangkan repositori pengetahuan yang terakses secara inklusif.</li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- 5. NILAI-NILAI UTAMA -->
+    <div class="bg-slate-100/80 border border-slate-200 rounded-xl p-6 space-y-4">
+      <h3 class="text-base font-bold text-slate-900 text-center">Nilai-Nilai Utama Lembaga</h3>
+      
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 text-center">
+        <div class="bg-white p-4 rounded-lg border border-slate-200 shadow-xs">
+          <i class="fa-solid fa-scale-balanced text-teal-700 text-xl mb-2"></i>
+          <h4 class="font-bold text-xs text-slate-800">Integritas</h4>
+          <p class="text-xs text-slate-500 mt-1">Riset independen dan objektif.</p>
+        </div>
+
+        <div class="bg-white p-4 rounded-lg border border-slate-200 shadow-xs">
+          <i class="fa-solid fa-people-group text-teal-700 text-xl mb-2"></i>
+          <h4 class="font-bold text-xs text-slate-800">Inklusivitas</h4>
+          <p class="text-xs text-slate-500 mt-1">Melibatkan seluruh lapisan komunitas.</p>
+        </div>
+
+        <div class="bg-white p-4 rounded-lg border border-slate-200 shadow-xs">
+          <i class="fa-solid fa-lightbulb text-teal-700 text-xl mb-2"></i>
+          <h4 class="font-bold text-xs text-slate-800">Inovasi</h4>
+          <p class="text-xs text-slate-500 mt-1">Solusi adaptif berbasis sains lokal.</p>
+        </div>
+
+        <div class="bg-white p-4 rounded-lg border border-slate-200 shadow-xs">
+          <i class="fa-solid fa-handshake-angle text-teal-700 text-xl mb-2"></i>
+          <h4 class="font-bold text-xs text-slate-800">Kemitraan</h4>
+          <p class="text-xs text-slate-500 mt-1">Kolaborasi erat dengan berbagai pihak.</p>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- 6. FOOTER -->
+  <footer id="contact" class="bg-slate-900 border-t border-slate-800 text-white py-6 px-5 mt-auto relative z-10">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-5 text-[11px]">
+      
+      <div class="space-y-1.5">
+        <span class="text-xs font-extrabold tracking-tight text-white block">PUJIONO CENTRE</span>
+        <p class="text-slate-400 leading-relaxed text-[10px]">
+          Pusat keunggulan kajian dan advokasi pengurangan risiko bencana, adaptasi iklim, serta kepemimpinan lokal.
+        </p>
+      </div>
+
+      <div>
+        <h4 class="font-bold uppercase tracking-wider text-teal-400 mb-2 text-[10px]">Navigasi</h4>
+        <ul class="space-y-1 text-slate-300">
+          <li><a href="tentang-kami.html" class="hover:text-white transition">Tentang Kami</a></li>
+          <!-- LINK DIPERBARUI KE LAYANAN-KEAHLIAN.HTML -->
+          <li><a href="layanan-keahlian.html" class="hover:text-white transition">Layanan & Keahlian</a></li>
+          <li><a href="index.html#proyek" class="hover:text-white transition">Portfolio Proyek</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="font-bold uppercase tracking-wider text-teal-400 mb-2 text-[10px]">Fokus Tematik</h4>
+        <ul class="space-y-1 text-slate-300">
+          <!-- LINK ANCHOR KE SEKSI SPECIFIC LAYANAN-KEAHLIAN.HTML -->
+          <li><a href="layanan-keahlian.html#drm" class="hover:text-white transition">Disaster Risk Management</a></li>
+          <li><a href="layanan-keahlian.html#iklim" class="hover:text-white transition">Climate Change Adaptation</a></li>
+          <li><a href="layanan-keahlian.html#lhl" class="hover:text-white transition">Local Humanitarian Leadership</a></li>
+        </ul>
+      </div>
+
+      <div class="space-y-1.5">
+        <h4 class="font-bold uppercase tracking-wider text-teal-400 text-[10px]">Sekretariat</h4>
+        <p class="text-slate-300">Yogyakarta, Indonesia</p>
+        <p class="text-slate-300">Email: info@pujionocentre.org</p>
+        <div class="flex space-x-3 pt-1 text-slate-400">
+          <a href="#" class="hover:text-teal-400 transition" aria-label="LinkedIn Pujiono Centre"><i class="fa-brands fa-linkedin text-sm"></i></a>
+          <a href="#" class="hover:text-teal-400 transition" aria-label="Twitter Pujiono Centre"><i class="fa-brands fa-twitter text-sm"></i></a>
+          <a href="#" class="hover:text-teal-400 transition" aria-label="YouTube Pujiono Centre"><i class="fa-brands fa-youtube text-sm"></i></a>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="max-w-7xl mx-auto border-t border-slate-800/80 mt-5 pt-3 flex flex-col sm:flex-row items-center justify-between text-[9px] text-slate-500 gap-2">
+      <p>&copy; 2026 Pujiono Centre. All rights reserved.</p>
+      <p>Membangun Ketangguhan Berbasis Bukti & Kemitraan</p>
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const mobileBtn = document.getElementById('mobile-menu-btn');
+      const mobileMenu = document.getElementById('mobile-menu');
+
+      if (mobileBtn && mobileMenu) {
+        mobileBtn.addEventListener('click', () => {
+          mobileMenu.classList.toggle('hidden');
+        });
+      }
+    });
+  </script>
+
+</body>
+</html>
