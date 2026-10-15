@@ -13,7 +13,7 @@
 </head>
 <body class="bg-slate-50 text-slate-800 antialiased flex flex-col min-h-screen">
 
-  <!-- 1. HEADER (TERHUBUNG SINKRON DENGAN HALAMAN LAIN) -->
+  <!-- 1. HEADER (KONSISTEN & TERSINKRON DENGAN HALAMAN LAIN) -->
   <header class="bg-white border-b border-slate-200/80 shrink-0 sticky top-0 z-50 shadow-xs">
     <div class="max-w-7xl mx-auto px-5 h-14 flex items-center justify-between">
       
@@ -63,7 +63,7 @@
   <!-- 2. PAGE HEADER BANNER -->
   <section class="bg-slate-900 text-white py-10 px-5 relative overflow-hidden">
     <div class="absolute inset-0 opacity-20">
-      <img src="https://images.unsplash.com/photo-1450133064473-71024230f91b?auto=format&fit=crop&w=1600&q=80" alt="Repositori Publikasi Background" class="w-full h-full object-cover">
+      <img src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&w=1600&q=80" alt="Repositori Publikasi Background" class="w-full h-full object-cover">
     </div>
     <div class="max-w-7xl mx-auto relative z-10 space-y-2">
       <div class="text-[10px] font-bold text-teal-400 uppercase tracking-widest flex items-center gap-2">
@@ -71,27 +71,106 @@
         <i class="fa-solid fa-chevron-right text-[8px] text-slate-500"></i>
         <span>Repositori Publikasi</span>
       </div>
-      <h1 class="text-2xl sm:text-3xl font-extrabold tracking-tight">Repositori Publikasi & Riset</h1>
+      <h1 class="text-2xl sm:text-3xl font-extrabold tracking-tight">Repositori Publikasi</h1>
       <p class="text-xs sm:text-sm text-slate-300 max-w-2xl leading-relaxed">
-        Pusat dokumen pengetahuan, policy brief, laporan hasil riset evaluatif, dan modul kesiapsiagaan bencana yang terakses secara terbuka.
+        Pusat dokumentasi, laporan kajian, policy brief, modul, serta naskah akademik Pujiono Centre dalam isu kebencanaan, adaptasi iklim, dan kepemimpinan lokal.
       </p>
     </div>
   </section>
 
-  <!-- 3. KONTEN UTAMA (KOSONG / KERANGKA) -->
-  <section class="py-16 max-w-7xl mx-auto px-5 w-full flex-1">
-    <div class="border-2 border-dashed border-slate-300 rounded-2xl p-12 text-center bg-white shadow-xs space-y-3">
-      <div class="w-12 h-12 bg-teal-50 text-teal-700 rounded-full flex items-center justify-center mx-auto text-lg">
-        <i class="fa-solid fa-folder-closed"></i>
-      </div>
-      <h2 class="text-base font-bold text-slate-900">Area Konten Repositori Publikasi</h2>
-      <p class="text-xs text-slate-500 max-w-md mx-auto leading-relaxed">
-        Bagian ini saat ini masih kosong dan siap untuk diisi dengan daftar dokumen, sistem pencarian/filter publikasi, serta tautan unduhan dokumen.
-      </p>
+  <!-- 3. KONTEN UTAMA (SISTEM REPOSITORI & FILTER INTERAKTIF) -->
+  <section class="py-10 max-w-7xl mx-auto px-5 w-full flex-1">
+    
+    <!-- Layout Grid: Sidebar Filter (Kiri) & Daftar Konten (Kanan) -->
+    <div class="grid grid-cols-1 lg:grid-cols-4 gap-8">
+      
+      <!-- SIDEBAR FILTER -->
+      <aside class="lg:col-span-1 space-y-6 bg-white p-5 rounded-xl border border-slate-200 shadow-xs h-fit">
+        <div class="flex items-center justify-between pb-3 border-b border-slate-100">
+          <h3 class="text-xs font-bold uppercase tracking-wider text-slate-900">Filter Dokumen</h3>
+          <button id="reset-filter" class="text-[10px] text-teal-700 hover:underline font-semibold">Reset</button>
+        </div>
+
+        <!-- Filter Berdasarkan Kategori (Langsung Nama Kategori) -->
+        <div class="space-y-2">
+          <label class="text-[11px] font-bold text-slate-700 block">Kategori</label>
+          <div class="space-y-1.5 text-xs text-slate-600">
+            <label class="flex items-center space-x-2 cursor-pointer hover:text-teal-700">
+              <input type="checkbox" name="kategori" value="Disaster Risk Management" class="rounded border-slate-300 text-teal-700 focus:ring-teal-600">
+              <span>Disaster Risk Management</span>
+            </label>
+            <label class="flex items-center space-x-2 cursor-pointer hover:text-teal-700">
+              <input type="checkbox" name="kategori" value="Climate Change Adaptation" class="rounded border-slate-300 text-teal-700 focus:ring-teal-600">
+              <span>Climate Change Adaptation</span>
+            </label>
+            <label class="flex items-center space-x-2 cursor-pointer hover:text-teal-700">
+              <input type="checkbox" name="kategori" value="Local Humanitarian Leadership" class="rounded border-slate-300 text-teal-700 focus:ring-teal-600">
+              <span>Local Humanitarian Leadership</span>
+            </label>
+            <label class="flex items-center space-x-2 cursor-pointer hover:text-teal-700">
+              <input type="checkbox" name="kategori" value="Policy & Governance" class="rounded border-slate-300 text-teal-700 focus:ring-teal-600">
+              <span>Policy & Governance</span>
+            </label>
+          </div>
+        </div>
+
+        <!-- Filter Berdasarkan Tahun -->
+        <div class="space-y-2 pt-2 border-t border-slate-100">
+          <label class="text-[11px] font-bold text-slate-700 block">Tahun Publikasi</label>
+          <select id="filter-tahun" class="w-full text-xs border border-slate-300 rounded-lg p-2 focus:outline-none focus:border-teal-700">
+            <option value="">Semua Tahun</option>
+            <option value="2026">2026</option>
+            <option value="2025">2025</option>
+            <option value="2024">2024</option>
+            <option value="2023">2023</option>
+            <option value="2022">2022</option>
+          </select>
+        </div>
+
+        <!-- Filter Berdasarkan Jenis Repo -->
+        <div class="space-y-2 pt-2 border-t border-slate-100">
+          <label class="text-[11px] font-bold text-slate-700 block">Jenis Repo</label>
+          <div class="space-y-1.5 text-xs text-slate-600">
+            <label class="flex items-center space-x-2 cursor-pointer hover:text-teal-700">
+              <input type="radio" name="jenis" value="PDF" class="text-teal-700 focus:ring-teal-600">
+              <span>Dokumen PDF</span>
+            </label>
+            <label class="flex items-center space-x-2 cursor-pointer hover:text-teal-700">
+              <input type="radio" name="jenis" value="Web" class="text-teal-700 focus:ring-teal-600">
+              <span>Tautan Web / Eksternal</span>
+            </label>
+          </div>
+        </div>
+      </aside>
+
+      <!-- AREA KONTEN UTAMA (SEARCH & GRID CARD) -->
+      <main class="lg:col-span-3 space-y-4">
+        
+        <!-- Search Bar & Info Counter -->
+        <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-xs flex flex-col sm:flex-row items-center justify-between gap-3">
+          <div class="relative w-full sm:w-96">
+            <span class="absolute inset-y-0 left-0 flex items-center pl-3 text-slate-400">
+              <i class="fa-solid fa-magnifying-glass text-xs"></i>
+            </span>
+            <input type="text" id="search-input" placeholder="Cari judul paper, artikel, atau laporan..." 
+                   class="w-full pl-9 pr-4 py-2 text-xs border border-slate-300 rounded-lg focus:outline-none focus:border-teal-700">
+          </div>
+          <div class="text-[11px] text-slate-500 font-medium">
+            Menampilkan <span id="item-count" class="font-bold text-slate-800">0</span> dokumen
+          </div>
+        </div>
+
+        <!-- Grid Container Card Dokumen (Dirender Dinamis oleh JavaScript) -->
+        <div id="repo-grid" class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <!-- Card akan muncul otomatis di sini -->
+        </div>
+
+      </main>
+
     </div>
   </section>
 
-  <!-- 4. FOOTER -->
+  <!-- 4. FOOTER (KONSISTEN DENGAN HALAMAN LAIN) -->
   <footer id="contact" class="bg-slate-900 border-t border-slate-800 text-white py-6 px-5 mt-auto relative z-10">
     <div class="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-5 text-[11px]">
       
@@ -139,9 +218,18 @@
     </div>
   </footer>
 
-  <!-- SCRIPT JAVASCRIPT MOBILE MENU -->
+  <!-- SCRIPT JAVASCRIPT: DATA REPOSITORI & LOGIKA FILTER/SEARCH -->
   <script>
+    // DATA REPOSITORI (Langsung judul dokumen tanpa header Kategori)
+    const reposData = [
+      { id: 1, judul: "Laporan Tahunan Kajian Pengurangan Risiko Bencana Berbasis Komunitas", kategori: "Disaster Risk Management", tahun: "2025", jenis: "PDF", url: "#" },
+      { id: 2, judul: "Portal Kebijakan Adaptasi Perubahan Iklim Nasional", kategori: "Climate Change Adaptation", tahun: "2026", jenis: "Web", url: "#" },
+      { id: 3, judul: "Modul Penguatan Kepemimpinan Lokal dalam Aksi Kemanusiaan", kategori: "Local Humanitarian Leadership", tahun: "2025", jenis: "PDF", url: "#" },
+      { id: 4, judul: "Kompilasi Policy Brief Kebijakan Publik & Mitigasi Bencana", kategori: "Policy & Governance", tahun: "2024", jenis: "PDF", url: "#" }
+    ];
+
     document.addEventListener('DOMContentLoaded', function() {
+      // Toggle Mobile Menu
       const mobileBtn = document.getElementById('mobile-menu-btn');
       const mobileMenu = document.getElementById('mobile-menu');
 
@@ -150,6 +238,98 @@
           mobileMenu.classList.toggle('hidden');
         });
       }
+
+      // Filter & Render Logika
+      const gridContainer = document.getElementById('repo-grid');
+      const searchInput = document.getElementById('search-input');
+      const filterTahun = document.getElementById('filter-tahun');
+      const kategoriCheckboxes = document.querySelectorAll('input[name="kategori"]');
+      const jenisRadios = document.querySelectorAll('input[name="jenis"]');
+      const itemCount = document.getElementById('item-count');
+      const resetBtn = document.getElementById('reset-filter');
+
+      function renderRepos(data) {
+        gridContainer.innerHTML = '';
+        itemCount.textContent = data.length;
+
+        if (data.length === 0) {
+          gridContainer.innerHTML = `
+            <div class="col-span-full py-12 text-center text-slate-400 text-xs bg-white rounded-xl border border-slate-200">
+              <i class="fa-solid fa-folder-open text-2xl mb-2 text-slate-300 block"></i>
+              Tidak ada dokumen yang sesuai dengan kriteria pencarian.
+            </div>`;
+          return;
+        }
+
+        data.forEach(item => {
+          const isPdf = item.jenis === "PDF";
+          const badgeColor = isPdf ? "bg-rose-50 text-rose-600" : "bg-sky-50 text-sky-600";
+          const iconClass = isPdf ? "fa-file-pdf" : "fa-globe";
+          const btnText = isPdf ? "Baca / Unduh" : "Kunjungi Tautan";
+
+          const card = document.createElement('div');
+          card.className = "bg-white p-4 rounded-xl border border-slate-200 shadow-xs flex flex-col justify-between hover:border-teal-600 transition";
+          
+          // Render Card: Langsung Judul tanpa badge Kategori di atasnya
+          card.innerHTML = `
+            <div class="space-y-2">
+              <div class="flex items-center justify-end text-[10px]">
+                <span class="text-slate-400 font-medium"><i class="fa-regular fa-calendar mr-1"></i>${item.tahun}</span>
+              </div>
+              <h4 class="text-xs font-bold text-slate-900 leading-snug pt-1">${item.judul}</h4>
+            </div>
+            <div class="pt-4 mt-3 border-t border-slate-100 flex items-center justify-between">
+              <span class="inline-flex items-center text-[10px] font-semibold ${badgeColor} px-2 py-0.5 rounded">
+                <i class="fa-solid ${iconClass} mr-1"></i> ${item.jenis}
+              </span>
+              <a href="${item.url}" target="_blank" class="bg-teal-700 hover:bg-teal-800 text-white text-[10px] font-bold px-3 py-1.5 rounded-lg transition">
+                ${btnText} <i class="fa-solid fa-arrow-up-right-from-square ml-1 text-[9px]"></i>
+              </a>
+            </div>
+          `;
+          gridContainer.appendChild(card);
+        });
+      }
+
+      function filterData() {
+        const keyword = searchInput.value.toLowerCase();
+        const selectedTahun = filterTahun.value;
+        
+        const selectedKategori = Array.from(kategoriCheckboxes)
+          .filter(cb => cb.checked)
+          .map(cb => cb.value);
+
+        const selectedJenis = Array.from(jenisRadios)
+          .find(r => r.checked)?.value || "";
+
+        const filtered = reposData.filter(item => {
+          const matchKeyword = item.judul.toLowerCase().includes(keyword);
+          const matchTahun = selectedTahun === "" || item.tahun === selectedTahun;
+          const matchKategori = selectedKategori.length === 0 || selectedKategori.includes(item.kategori);
+          const matchJenis = selectedJenis === "" || item.jenis === selectedJenis;
+
+          return matchKeyword && matchTahun && matchKategori && matchJenis;
+        });
+
+        renderRepos(filtered);
+      }
+
+      // Event Listeners
+      searchInput.addEventListener('input', filterData);
+      filterTahun.addEventListener('change', filterData);
+      kategoriCheckboxes.forEach(cb => cb.addEventListener('change', filterData));
+      jenisRadios.forEach(r => r.addEventListener('change', filterData));
+
+      resetBtn.addEventListener('click', () => {
+        searchInput.value = '';
+        filterTahun.value = '';
+        kategoriCheckboxes.forEach(cb => cb.checked = false);
+        jenisRadios.forEach(r => r.checked = false);
+        renderRepos(reposData);
+      });
+
+      // Inisialisasi awal
+      renderRepos(reposData);
     });
   </script>
 

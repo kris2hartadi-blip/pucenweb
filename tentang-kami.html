@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="id" class="h-full">
+<html lang="id" class="h-full scroll-smooth">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,7 +13,7 @@
 </head>
 <body class="bg-slate-50 text-slate-800 antialiased flex flex-col min-h-screen">
 
-  <!-- 1. HEADER (NAVIGASI TERHUBUNG SINKRON - TIDAK DIUBAH) -->
+  <!-- 1. HEADER (NAVIGASI TERHUBUNG SINKRON) -->
   <header class="bg-white border-b border-slate-200/80 shrink-0 sticky top-0 z-50 shadow-xs">
     <div class="max-w-7xl mx-auto px-5 h-14 flex items-center justify-between">
       
@@ -78,13 +78,29 @@
     </div>
   </section>
 
+  <!-- QUICK NAV PILLS (INTERACTIVE SPY-SCROLL BAR) -->
+  <div class="bg-white border-b border-slate-200 shadow-xs sticky top-14 z-40">
+    <div class="max-w-7xl mx-auto px-5 py-3 flex items-center gap-2 overflow-x-auto no-scrollbar">
+      <span class="text-[11px] font-bold text-slate-400 uppercase tracking-wider shrink-0 mr-2">Navigasi Bagian:</span>
+      <a href="#siapa-kami" class="nav-pill text-xs font-semibold px-4 py-1.5 rounded-full bg-teal-700 text-white shadow-sm shrink-0 transition">
+        Siapa Kami
+      </a>
+      <a href="#kapasitas-utama" class="nav-pill text-xs font-semibold px-4 py-1.5 rounded-full bg-slate-100 text-slate-600 hover:bg-slate-200 shrink-0 transition">
+        Kapasitas Utama
+      </a>
+      <a href="#fokus-kerja" class="nav-pill text-xs font-semibold px-4 py-1.5 rounded-full bg-slate-100 text-slate-600 hover:bg-slate-200 shrink-0 transition">
+        Fokus Kerja
+      </a>
+    </div>
+  </div>
+
   <!-- 3. PROFIL UTAMA (SIAPA KAMI) -->
-  <section class="py-10 max-w-7xl mx-auto px-5 w-full space-y-12">
+  <section class="py-10 max-w-7xl mx-auto px-5 w-full space-y-16">
     
     <!-- Profil & Latar Belakang -->
-    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+    <div id="siapa-kami" class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center pt-4">
       <div class="lg:col-span-7 space-y-4">
-        <span class="text-[11px] font-extrabold text-teal-800 tracking-wider uppercase bg-teal-50 px-2.5 py-1 rounded border border-teal-200 inline-block">
+        <span class="text-[11px] font-extrabold text-teal-800 tracking-wider uppercase bg-teal-50 px-3 py-1 rounded-full border border-teal-200 inline-block shadow-2xs">
           SIAPA KAMI
         </span>
         <h2 class="text-xl sm:text-2xl font-bold text-slate-900 leading-snug">
@@ -105,11 +121,13 @@
       </div>
     </div>
 
-    <!-- 4. PILAR LAYANAN UTAMA (OUR SERVICES) -->
-    <div class="space-y-6">
-      <div class="text-center max-w-xl mx-auto">
-        <span class="text-[10px] font-bold text-teal-700 uppercase tracking-widest">KAPASITAS UTAMA</span>
-        <h2 class="text-lg sm:text-xl font-bold text-slate-900 mt-1">Empat Pilar Layanan Lembaga</h2>
+    <!-- 4. PILAR LAYANAN UTAMA (KAPASITAS UTAMA) -->
+    <div id="kapasitas-utama" class="space-y-6 pt-4">
+      <div class="space-y-2">
+        <span class="text-[11px] font-extrabold text-teal-800 tracking-wider uppercase bg-teal-50 px-3 py-1 rounded-full border border-teal-200 inline-block shadow-2xs">
+          KAPASITAS UTAMA
+        </span>
+        <h2 class="text-xl sm:text-2xl font-bold text-slate-900">Empat Pilar Layanan Lembaga</h2>
       </div>
 
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
@@ -159,11 +177,13 @@
       </div>
     </div>
 
-    <!-- 5. APA YANG KAMI LAKUKAN (WHAT WE DO) -->
-    <div class="bg-white border border-slate-200 rounded-xl p-6 sm:p-8 shadow-xs space-y-6">
-      <div>
-        <span class="text-[10px] font-bold text-teal-700 uppercase tracking-widest">FOKUS KERJA</span>
-        <h2 class="text-xl font-bold text-slate-900 mt-1">Apa Yang Kami Lakukan</h2>
+    <!-- 5. APA YANG KAMI LAKUKAN (FOKUS KERJA) -->
+    <div id="fokus-kerja" class="bg-white border border-slate-200 rounded-xl p-6 sm:p-8 shadow-xs space-y-6 pt-4">
+      <div class="space-y-2">
+        <span class="text-[11px] font-extrabold text-teal-800 tracking-wider uppercase bg-teal-50 px-3 py-1 rounded-full border border-teal-200 inline-block shadow-2xs">
+          FOKUS KERJA
+        </span>
+        <h2 class="text-xl sm:text-2xl font-bold text-slate-900">Apa Yang Kami Lakukan</h2>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-xs sm:text-sm text-slate-700 leading-relaxed">
@@ -215,7 +235,7 @@
 
   </section>
 
-  <!-- 6. FOOTER (DIKEMBALIKAN KE VERSI LAMA) -->
+  <!-- 6. FOOTER -->
   <footer id="contact" class="bg-slate-900 border-t border-slate-800 text-white py-6 px-5 mt-auto relative z-10">
     <div class="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-5 text-[11px]">
       
@@ -263,8 +283,10 @@
     </div>
   </footer>
 
+  <!-- SCRIPT INTERAKSI (MOBILE MENU & ACTIVE NAV PILL HIGHLIGHT) -->
   <script>
     document.addEventListener('DOMContentLoaded', function() {
+      // Mobile Menu Toggle
       const mobileBtn = document.getElementById('mobile-menu-btn');
       const mobileMenu = document.getElementById('mobile-menu');
 
@@ -273,6 +295,21 @@
           mobileMenu.classList.toggle('hidden');
         });
       }
+
+      // Nav Pills Active Highlight on Scroll / Click
+      const navPills = document.querySelectorAll('.nav-pill');
+      const sections = ['siapa-kami', 'kapasitas-utama', 'fokus-kerja'];
+
+      navPills.forEach(pill => {
+        pill.addEventListener('click', function() {
+          navPills.forEach(p => {
+            p.classList.remove('bg-teal-700', 'text-white', 'shadow-sm');
+            p.classList.add('bg-slate-100', 'text-slate-600');
+          });
+          this.classList.remove('bg-slate-100', 'text-slate-600');
+          this.classList.add('bg-teal-700', 'text-white', 'shadow-sm');
+        });
+      });
     });
   </script>
 
